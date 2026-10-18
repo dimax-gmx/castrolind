@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es-419">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Castrol Industrial — Lubricación de Alto Rendimiento | Asesoría Técnica</title>
+<meta name="description" content="Portafolio industrial Castrol: fluidos hidráulicos, engranajes, grasas, metalmecánica y grado alimenticio. Solicita asesoría técnica directa por WhatsApp.">
+<style>
+:root{
+  --green:#00873C;
+  --green-dark:#00401C;
+  --green-deep:#01290F;
+  --white:#FFFFFF;
+  --off:#F6FAF7;
+  --ink:#0C1A11;
+  --muted:#5A6B5F;
+  --red:#E30613;
+  --radius:18px;
+  --font:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--white);color:var(--ink);overflow-x:hidden;cursor:none}
+@media (pointer:coarse){body{cursor:auto}}
+::selection{background:var(--green);color:var(--white)}
+
+/* ============ CURSOR GOTA ============ */
+.drop-cursor{position:fixed;top:0;left:0;width:22px;height:22px;pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);transition:transform .18s ease, opacity .25s ease;will-change:transform}
+.drop-cursor svg{display:block;filter:drop-shadow(0 4px 10px rgba(0,135,60,.35))}
+.drop-cursor.hovering{transform:translate(-50%,-50%) scale(1.7)}
+.drop-cursor.pressing{transform:translate(-50%,-50%) scale(.8)}
+.drop-cursor.hidden{opacity:0}
+@media (pointer:coarse){.drop-cursor{display:none}}
+
+/* ============ NAV ============ */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+  padding:18px 5vw;transition:background .3s,box-shadow .3s,padding .3s}
+nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(0,135,60,.12);padding:12px 5vw}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.logo-mark{width:38px;height:38px;border-radius:50%;background:var(--green);position:relative;flex-shrink:0}
+.logo-mark::before{content:'';position:absolute;left:50%;top:7px;transform:translateX(-50%);width:11px;height:15px;
+  background:var(--white);border-radius:50% 50% 50% 50%/60% 60% 40% 40%}
+.logo-mark::after{content:'';position:absolute;left:50%;top:14px;transform:translateX(-50%) rotate(45deg);width:11px;height:11px;
+  background:var(--white);border-radius:0 50% 50% 50%}
+.logo span{font-weight:800;font-size:1.05rem;letter-spacing:.5px}
+.logo span b{color:var(--green)}
+.nav-links{display:flex;gap:34px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--ink);font-size:.9rem;font-weight:600;position:relative;padding:4px 0}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--red);transition:width .3s cubic-bezier(.65,0,.35,1)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--green);color:var(--white)!important;padding:10px 22px!important;border-radius:100px;font-weight:700!important}
+.nav-cta::after{display:none}
+.nav-cta:hover{background:var(--green-dark);transform:translateY(-2px)}
+@media(max-width:820px){.nav-links li:not(.keep){display:none}}
+
+/* ============ HERO ============ */
+.hero{min-height:100svh;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:4vw;
+  padding:130px 5vw 70px;position:relative;background:
+  radial-gradient(1200px 600px at 85% -10%, rgba(0,135,60,.10), transparent 60%),
+  linear-gradient(180deg,var(--off),var(--white))}
+.hero-lines{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-lines i{position:absolute;top:-10%;height:120%;width:1.5px;background:linear-gradient(180deg,transparent,var(--red) 30%,var(--red) 70%,transparent);opacity:.55}
+.hero-lines i:nth-child(1){left:12%}
+.hero-lines i:nth-child(2){left:31%;opacity:.3}
+.hero-lines i:nth-child(3){left:76%;opacity:.25}
+.hero-lines i:nth-child(4){right:6%;opacity:.4}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:700;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--green);margin-bottom:22px}
+.eyebrow::before{content:'';width:34px;height:1.5px;background:var(--red)}
+h1{font-size:clamp(2.4rem,5.2vw,4.3rem);line-height:1.05;font-weight:800;letter-spacing:-1.5px;margin-bottom:24px}
+h1 em{font-style:normal;color:var(--green);position:relative;white-space:nowrap}
+h1 em::after{content:'';position:absolute;left:0;bottom:6px;width:100%;height:3px;background:var(--red);opacity:.7;border-radius:3px}
+.hero p{font-size:clamp(1rem,1.4vw,1.18rem);color:var(--muted);max-width:520px;line-height:1.7;margin-bottom:36px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;border-radius:100px;font-weight:700;
+  font-size:.95rem;text-decoration:none;border:1.5px solid transparent;transition:transform .25s,box-shadow .25s,background .25s;cursor:none}
+@media (pointer:coarse){.btn{cursor:pointer}}
+.btn-primary{background:var(--green);color:var(--white);box-shadow:0 12px 30px rgba(0,135,60,.3)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,135,60,.4);background:var(--green-dark)}
+.btn-ghost{border-color:rgba(0,64,28,.25);color:var(--green-dark);background:rgba(255,255,255,.6)}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--green);box-shadow:0 10px 26px rgba(0,64,28,.12)}
+.hero-stats{display:flex;gap:40px;margin-top:52px;flex-wrap:wrap}
+.stat b{display:block;font-size:1.7rem;color:var(--green);font-weight:800;letter-spacing:-.5px}
+.stat span{font-size:.82rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:1px}
+
+/* Gota gigante hero */
+.hero-drop{display:flex;align-items:center;justify-content:center;position:relative}
+.drop-stage{position:relative;width:min(360px,70vw);aspect-ratio:1/1.15}
+.drop-stage svg{width:100%;height:100%;overflow:visible}
+.drop-shadow{position:absolute;left:50%;bottom:-6%;transform:translateX(-50%);width:55%;height:18px;
+  background:radial-gradient(ellipse at center, rgba(0,64,28,.22), transparent 70%);border-radius:50%;
+  animation:shadowPulse 4s ease-in-out infinite}
+@keyframes shadowPulse{0%,100%{transform:translateX(-50%) scaleX(1)}50%{transform:translateX(-50%) scaleX(.72)}}
+.float-label{position:absolute;background:var(--white);border:1px solid rgba(0,135,60,.15);border-radius:12px;
+  padding:10px 16px;font-size:.78rem;font-weight:700;color:var(--green-dark);box-shadow:0 10px 28px rgba(0,64,28,.1);
+  animation:floaty 5s ease-in-out infinite}
+.float-label small{display:block;font-weight:500;color:var(--muted);font-size:.68rem}
+.fl1{top:12%;left:-14%;animation-delay:.4s}
+.fl2{bottom:20%;right:-12%;animation-delay:1.2s}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* ============ SECCIONES ============ */
+section{padding:100px 5vw}
+.sec-head{max-width:720px;margin-bottom:60px}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:800;letter-spacing:-1px;line-height:1.12;margin-bottom:16px}
+.sec-head p{color:var(--muted);line-height:1.7;font-size:1.02rem}
+
+/* Industrias */
+.industrias{background:var(--green-deep);color:var(--white);position:relative;overflow:hidden}
+.industrias::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:repeating-linear-gradient(90deg,var(--red) 0 60px,transparent 60px 120px)}
+.sec-head.light p{color:rgba(255,255,255,.65)}
+.ind-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:2px;background:rgba(255,255,255,.08);border-radius:var(--radius);overflow:hidden}
+.ind-card{background:var(--green-deep);padding:34px 28px;transition:background .35s,transform .35s;position:relative}
+.ind-card::before{content:'';position:absolute;top:0;left:0;width:0;height:2px;background:var(--red);transition:width .4s}
+.ind-card:hover{background:#03401B}
+.ind-card:hover::before{width:100%}
+.ind-card .num{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:2px;margin-bottom:14px}
+.ind-card h3{font-size:1.05rem;margin-bottom:10px;letter-spacing:-.2px}
+.ind-card p{font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.6}
+.ind-card .fam{margin-top:16px;font-size:.74rem;color:#7FDDA5;font-weight:600;line-height:1.7}
+
+/* Familias / productos */
+.fam-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px}
+.fam-card{border:1px solid rgba(0,135,60,.14);border-radius:var(--radius);padding:36px 30px;background:var(--white);
+  transition:transform .3s,box-shadow .3s,border-color .3s;position:relative;overflow:hidden}
+.fam-card::after{content:'';position:absolute;top:0;right:0;width:52px;height:2px;background:var(--red);opacity:0;transition:opacity .3s}
+.fam-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(0,64,28,.12);border-color:rgba(0,135,60,.35)}
+.fam-card:hover::after{opacity:1}
+.fam-icon{width:52px;height:52px;border-radius:14px;background:rgba(0,135,60,.09);display:grid;place-items:center;margin-bottom:22px;color:var(--green)}
+.fam-card h3{font-size:1.12rem;margin-bottom:8px}
+.fam-card .tagline{font-size:.76rem;font-weight:700;color:var(--red);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
+.fam-card p{font-size:.88rem;color:var(--muted);line-height:1.65}
+.fam-card ul{list-style:none;margin-top:16px}
+.fam-card li{font-size:.82rem;color:var(--green-dark);font-weight:600;padding:6px 0 6px 20px;position:relative}
+.fam-card li::before{content:'';position:absolute;left:0;top:12px;width:10px;height:1.5px;background:var(--red)}
+
+/* Proceso */
+.proceso{background:var(--off);position:relative}
+.proceso::before{content:'';position:absolute;left:0;top:50%;width:100%;height:1px;
+  background:repeating-linear-gradient(90deg,rgba(227,6,19,.5) 0 40px,transparent 40px 80px)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;position:relative}
+.step{background:var(--white);border-radius:var(--radius);padding:34px 28px;box-shadow:0 8px 24px rgba(0,64,28,.06);
+  transition:transform .3s}
+.step:hover{transform:translateY(-6px)}
+.step .n{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--green);color:var(--green);
+  display:grid;place-items:center;font-weight:800;margin-bottom:18px;background:var(--white)}
+.step h3{font-size:1rem;margin-bottom:8px}
+.step p{font-size:.85rem;color:var(--muted);line-height:1.6}
+
+/* Formulario */
+.contacto{background:linear-gradient(160deg,var(--green-deep),var(--green-dark));color:var(--white);position:relative;overflow:hidden}
+.contacto::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:repeating-linear-gradient(90deg,var(--red) 0 60px,transparent 60px 120px)}
+.contact-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:6vw;align-items:start;max-width:1200px;margin:0 auto}
+.contacto h2{font-size:clamp(1.9rem,3.4vw,2.6rem);letter-spacing:-1px;line-height:1.15;margin-bottom:18px}
+.contacto .lead{color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:30px;font-size:1rem}
+.wa-chip{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  padding:12px 20px;border-radius:100px;font-size:.85rem;font-weight:600}
+.wa-chip .dot{width:9px;height:9px;border-radius:50%;background:#4ade80;animation:blink 2s infinite}
+@keyframes blink{50%{opacity:.35}}
+form{background:var(--white);border-radius:22px;padding:40px;box-shadow:0 30px 70px rgba(0,0,0,.3);color:var(--ink)}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.f-group{margin-bottom:18px}
+.f-group label{display:block;font-size:.78rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--green-dark);margin-bottom:8px}
+.f-group input,.f-group select,.f-group textarea{width:100%;padding:14px 16px;border:1.5px solid rgba(0,64,28,.15);border-radius:12px;
+  font-family:inherit;font-size:.92rem;background:var(--off);transition:border-color .25s,box-shadow .25s;color:var(--ink);cursor:none}
+@media (pointer:coarse){.f-group input,.f-group select,.f-group textarea{cursor:auto}}
+.f-group input:focus,.f-group select:focus,.f-group textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 4px rgba(0,135,60,.12);background:var(--white)}
+.f-group textarea{resize:vertical;min-height:96px}
+.f-submit{width:100%;background:var(--green);color:var(--white);border:none;padding:17px;border-radius:100px;
+  font-size:1rem;font-weight:800;letter-spacing:.3px;transition:transform .25s,background .25s,box-shadow .25s;display:flex;
+  align-items:center;justify-content:center;gap:10px;cursor:none;margin-top:6px}
+@media (pointer:coarse){.f-submit{cursor:pointer}}
+.f-submit:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,135,60,.35)}
+.f-note{text-align:center;font-size:.74rem;color:var(--muted);margin-top:14px}
+@media(max-width:900px){.contact-wrap{grid-template-columns:1fr}.f-row{grid-template-columns:1fr}}
+
+/* Footer */
+footer{padding:44px 5vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;background:var(--green-deep);color:rgba(255,255,255,.5);font-size:.8rem}
+footer b{color:var(--white)}
+footer .red-line{width:40px;height:2px;background:var(--red)}
+
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal[data-d="1"]{transition-delay:.1s}.reveal[data-d="2"]{transition-delay:.2s}
+.reveal[data-d="3"]{transition-delay:.3s}.reveal[data-d="4"]{transition-delay:.4s}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important}}
+
+/* Responsive hero */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding-top:120px;text-align:center}
+  .hero p{margin-inline:auto}
+  .hero-actions,.hero-stats{justify-content:center}
+  .hero-drop{order:-1;margin-bottom:10px}
+  .drop-stage{width:min(240px,60vw)}
+  .fl1{left:-4%}.fl2{right:-4%}
+  section{padding:72px 6vw}
+  form{padding:28px 22px}
+}
+</style>
+</head>
+<body>
+
+<!-- Cursor gota -->
+<div class="drop-cursor" id="dropCursor" aria-hidden="true">
+  <svg viewBox="0 0 24 30" width="22" height="28">
+    <path d="M12 1 C12 1 3.5 13 3.5 19.5 a8.5 8.5 0 0 0 17 0 C20.5 13 12 1 12 1 Z" fill="#00873C"/>
+    <ellipse cx="9" cy="18" rx="2.4" ry="3.4" fill="#ffffff" opacity=".5" transform="rotate(-18 9 18)"/>
+    <path d="M18.5 8.5 C19.8 10.6 20.5 12.6 20.5 14.2" stroke="#E30613" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  </svg>
+</div>
+
+<nav id="nav">
+  <a class="logo" href="#top">
+    <div class="logo-mark"></div>
+    <span>CASTROL <b>INDUSTRIAL</b></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#industrias">Industrias</a></li>
+    <li><a href="#familias">Productos</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li class="keep"><a href="#contacto" class="nav-cta">Solicitar asesoría</a></li>
+  </ul>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div>
+    <span class="eyebrow">Distribuidor autorizado · Asesoría técnica especializada</span>
+    <h1>Lubricación industrial <em>que no detiene</em> tu planta.</h1>
+    <p>Fluidos hidráulicos, aceites para engranajes, grasas de alto desempeño y soluciones de metalmecánica Castrol. Te ayudamos a seleccionar el producto exacto para tu equipo, carga y condiciones de operación.</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn btn-primary">Solicitar asesoría técnica
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#familias" class="btn btn-ghost">Ver familias de productos</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat reveal"><b>10</b><span>familias de producto</span></div>
+      <div class="stat reveal" data-d="1"><b>180+</b><span>SKUs vigentes</span></div>
+      <div class="stat reveal" data-d="2"><b>14</b><span>industrias objetivo</span></div>
+    </div>
+  </div>
+  <div class="hero-drop">
+    <div class="drop-stage">
+      <div class="drop-shadow"></div>
+      <svg viewBox="0 0 200 230" class="hero-drop-svg">
+        <defs>
+          <linearGradient id="gGreen" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#00A950"/><stop offset="1" stop-color="#00401C"/>
+          </linearGradient>
+        </defs>
+        <path id="bigDrop" d="M100 12 C100 12 26 104 26 152 a74 74 0 0 0 148 0 C174 104 100 12 100 12 Z" fill="url(#gGreen)"/>
+        <ellipse cx="72" cy="150" rx="17" ry="26" fill="#ffffff" opacity=".28" transform="rotate(-16 72 150)"/>
+        <path d="M163 78 C171 92 176 108 176 122" stroke="#E30613" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M30 190 C60 210 140 210 170 190" stroke="#E30613" stroke-width="1.5" fill="none" opacity=".5" stroke-dasharray="3 7"/>
+      </svg>
+      <div class="float-label fl1">Hyspin AWS<small>Hidráulicos antidesgaste</small></div>
+      <div class="float-label fl2">Tribol GR<small>Grasas de alto desempeño</small></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ INDUSTRIAS ============ -->
+<section class="industrias" id="industrias">
+  <div class="sec-head light reveal">
+    <span class="eyebrow" style="color:#7FDDA5">Dónde operamos</span>
+    <h2>Industrias que mantenemos en movimiento</h2>
+    <p>Cada planta tiene sus propios equipos críticos. Estas son las industrias donde nuestras familias de productos demuestran su mayor valor.</p>
+  </div>
+  <div class="ind-grid">
+    <div class="ind-card reveal"><div class="num">01</div><h3>Acero y siderurgia</h3><p>Hidráulicos cerca del metal fundido, mesas de rodillos y reductores críticos.</p><div class="fam">Anvol SWX · Hyspin · Optigear · Molub-Alloy</div></div>
+    <div class="ind-card reveal" data-d="1"><div class="num">02</div><h3>Minería y canteras</h3><p>Molinos, engranajes abiertos, roca y perforación en ambientes severos.</p><div class="fam">Molub-Alloy OG · Alphasyn · Tribol GR · Magna RD</div></div>
+    <div class="ind-card reveal" data-d="2"><div class="num">03</div><h3>Cemento</h3><p>Hornos, molinos, transportadores y sistemas hidráulicos de alto desgaste.</p><div class="fam">OG 8031 · Alpha SP · Hyspin AWS · Aircol SR</div></div>
+    <div class="ind-card reveal" data-d="3"><div class="num">04</div><h3>Automotriz y autopartes</h3><p>Mecanizado, estampado, fine blanking y mantenimiento de máquinas-herramienta.</p><div class="fam">Hysol · Syntilo · Iloform · Techniclean</div></div>
+    <div class="ind-card reveal"><div class="num">05</div><h3>Alimentos y bebidas</h3><p>Lubricación grado alimenticio NSF H1 con posible contacto incidental.</p><div class="fam">Optileb GT · Optileb GR</div></div>
+    <div class="ind-card reveal" data-d="1"><div class="num">06</div><h3>Energía eólica</h3><p>Cajas multiplicadoras y rodamientos de generador en turbinas.</p><div class="fam">Optigear CT 320 · Tribol GR 100 PD</div></div>
+    <div class="ind-card reveal" data-d="2"><div class="num">07</div><h3>Oil &amp; Gas / Marina</h3><p>Hidráulica offshore, grúas portuarias y reductores marinos.</p><div class="fam">Hyspin AWH-M · Tribol GR 1350 · Alphasyn EP</div></div>
+    <div class="ind-card reveal" data-d="3"><div class="num">08</div><h3>Papel y pulpa</h3><p>Sistemas de circulación, rodamientos expuestos a agua y secadores.</p><div class="fam">Alpha SP · Tribol GR SW · Magna 320</div></div>
+  </div>
+</section>
+
+<!-- ============ FAMILIAS ============ -->
+<section id="familias">
+  <div class="sec-head reveal">
+    <span class="eyebrow">Portafolio</span>
+    <h2>Familias de productos Castrol</h2>
+    <p>De la metalmecánica a la protección anticorrosiva: una solución para cada punto de lubricación de tu planta.</p>
+  </div>
+  <div class="fam-grid">
+    <div class="fam-card reveal"><div class="fam-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c3.5 4 6 7.2 6 10.4A6 6 0 0 1 6 13.4C6 10.2 8.5 7 12 3z"/></svg></div><div class="tagline">Metalmecánica</div><h3>Fluidos de corte y conformado</h3><p>Mecanizado, rectificado, brunido, broachado, EDM, fine blanking y roll forming.</p><ul><li>Hysol · Syntilo</li><li>Alusol · Almaredge</li><li>Ilocut · Honilo · Variocut</li><li>Iloform · Performance Bio</li></ul></div>
+    <div class="fam-card reveal" data-d="1"><div class="fam-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="8" width="18" height="9" rx="2"/><path d="M7 8V6m5 2V6m5 2V6"/></svg></div><div class="tagline">Hidráulica</div><h3>Fluidos hidráulicos y circulación</h3><p>Sistemas con bombas de engranajes, paletas o pistones; servicio móvil y resistente al fuego.</p><ul><li>Hyspin AWS / AWH-M / HVI</li><li>Tribol HM 943</li><li>Anvol SWX / WG</li><li>Magna 320 · Brayco 717</li></ul></div>
+    <div class="fam-card reveal" data-d="2"><div class="fam-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.2"/><circle cx="12" cy="12" r="8"/></svg></div><div class="tagline">Engranajes</div><h3>Aceites para reductores</h3><p>Engranajes cerrados de carga media a severa, abiertos y sintéticos de alta exigencia.</p><ul><li>Alpha SP · Alphasyn EP / T</li><li>Optigear BM · 1100 · Synthetic</li><li>Molub-Alloy OG 8031 / 936</li><li>Optigear CT 320 (eólica)</li></ul></div>
+    <div class="fam-card reveal"><div class="fam-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3.5 2"/></svg></div><div class="tagline">Grasas</div><h3>Grasas, pastas y compuestos</h3><p>Rodamientos de alta carga, agua, temperatura extrema y ambientes severos.</p><ul><li>Spheerol EPL 2 · Pyroplex</li><li>Molub-Alloy 777 / 860 / 6040</li><li>Tribol GR 100 PD · 1350 · SW</li><li>Molub-Alloy 1000 HT</li></ul></div>
+    <div class="fam-card reveal" data-d="1"><div class="fam-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 16c2-6 4-9 8-9s6 3 8 9"/><path d="M9 16h6"/></svg></div><div class="tagline">Aire y cadena</div><h3>Compresores y cadenas</h3><p>Compresores de tornillo y lubricación de cadenas y transportadores a alta temperatura.</p><ul><li>Aircol SR 32/46/68</li><li>Molub-Alloy CH 22</li><li>Tribol CH 1421</li><li>Viscogen G · KL · KLK</li></ul></div>
+    <div class="fam-card reveal" data-d="2"><div class="fam-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.5 5.3L20 9.2l-4 4 1 5.8-5-2.8-5 2.8 1-5.8-4-4 5.5-.9z"/></svg></div><div class="tagline">Especialidades</div><h3>H1, limpieza y protección</h3><p>Grado alimenticio, husillos y guías, limpieza de proceso y anticorrosivos.</p><ul><li>Optileb GT 220 · GR 823 / UF</li><li>Hyspin Spindle · Magna SW</li><li>Techniclean · Rustilo</li></ul></div>
+  </div>
+</section>
+
+<!-- ============ PROCESO ============ -->
+<section class="proceso" id="proceso">
+  <div class="sec-head reveal">
+    <span class="eyebrow">Cómo trabajamos</span>
+    <h2>De tu consulta a la recomendación correcta</h2>
+    <p>Nunca sustituimos un lubricante sin validar las condiciones reales del equipo. Este es nuestro método:</p>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><div class="n">1</div><h3>Nos cuentas tu equipo</h3><p>Industrias, máquina, marca, viscosidad actual y el problema que estás viendo.</p></div>
+    <div class="step reveal" data-d="1"><div class="n">2</div><h3>Validamos técnicamente</h3><p>Revisamos PDS, recomendación OEM, carga, velocidad, temperatura y materiales.</p></div>
+    <div class="step reveal" data-d="2"><div class="n">3</div><h3>Propuesta exacta</h3><p>Te entregamos el producto y grado correctos, con presentación disponible.</p></div>
+    <div class="step reveal" data-d="3"><div class="n">4</div><h3>Acompañamiento</h3><p>Seguimiento en puesta en marcha y plan de mantenimiento de lubricación.</p></div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="contacto" id="contacto">
+  <div class="contact-wrap">
+    <div class="reveal">
+      <span class="eyebrow" style="color:#7FDDA5">Hablemos</span>
+      <h2>Solicita tu asesoría técnica ahora</h2>
+      <p class="lead">Completa el formulario y se abrirá WhatsApp con tu solicitud ya redactada. Un especialista te responderá con la recomendación indicada para tu equipo.</p>
+      <div class="wa-chip"><span class="dot"></span> Respuesta directa por WhatsApp · +58 426 583 1648</div>
+    </div>
+    <form id="techForm" class="reveal" data-d="1">
+      <div class="f-row">
+        <div class="f-group"><label for="nombre">Nombre completo *</label><input id="nombre" name="nombre" type="text" placeholder="Ej: Carlos Rodríguez" required></div>
+        <div class="f-group"><label for="empresa">Empresa / Planta *</label><input id="empresa" name="empresa" type="text" placeholder="Ej: Aceros del Centro" required></div>
+      </div>
+      <div class="f-row">
+        <div class="f-group"><label for="industria">Industria *</label>
+          <select id="industria" name="industria" required>
+            <option value="" disabled selected>Selecciona tu industria</option>
+            <option>Acero / Siderurgia / Fundición</option>
+            <option>Minería / Canteras</option>
+            <option>Cemento</option>
+            <option>Automotriz / Autopartes</option>
+            <option>Alimentos y Bebidas / Azúcar</option>
+            <option>Papel y Pulpa</option>
+            <option>Eólica / Energía Renovable</option>
+            <option>Oil &amp; Gas / Marina / Puertos</option>
+            <option>Fabricación de tubos / perfiles</option>
+            <option>Maquinaria / Manufactura general</option>
+            <option>Otra</option>
+          </select>
+        </div>
+        <div class="f-group"><label for="equipo">Equipo o aplicación</label><input id="equipo" name="equipo" type="text" placeholder="Ej: reductor de molino, sistema hidráulico"></div>
+      </div>
+      <div class="f-group"><label for="producto">Producto de interés (opcional)</label><input id="producto" name="producto" type="text" placeholder="Ej: Hyspin AWS 68, Optigear BM 320…"></div>
+      <div class="f-group"><label for="mensaje">Describe tu necesidad</label><textarea id="mensaje" name="mensaje" placeholder="Cuentanos el problema: desgaste, temperatura, fugas, cambio de proveedor…"></textarea></div>
+      <button type="submit" class="f-submit">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.5 14.2c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.2-3.5-.7-3-1.2-4.8-4.2-5-4.4-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.4 0 .1 0 .7-.4 1.1z"/></svg>
+        Enviar solicitud por WhatsApp
+      </button>
+      <p class="f-note">Al enviar se abrirá WhatsApp con tu mensaje listo. No compartimos tus datos.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div style="display:flex;align-items:center;gap:14px"><div class="red-line"></div><span><b>CASTROL INDUSTRIAL</b> · Asesoría técnica de lubricación</span></div>
+  <span>+58 426 583 1648 · Atención a plantas industriales</span>
+</footer>
+
+<script>
+/* ===== Cursor gota (solo dispositivos con puntero fino) ===== */
+(function(){
+  const cur = document.getElementById('dropCursor');
+  if (window.matchMedia('(pointer:coarse)').matches) return;
+  let tx = innerWidth/2, ty = innerHeight/2, x = tx, y = ty, visible = false;
+  addEventListener('mousemove', e => {
+    tx = e.clientX; ty = e.clientY;
+    if (!visible){ visible = true; cur.classList.remove('hidden'); x = tx; y = ty; }
+  });
+  document.addEventListener('mouseleave', () => { visible = false; cur.classList.add('hidden'); });
+  document.querySelectorAll('a,button,input,select,textarea,.fam-card,.ind-card,.step').forEach(el => {
+    el.addEventListener('mouseenter', () => cur.classList.add('hovering'));
+    el.addEventListener('mouseleave', () => cur.classList.remove('hovering'));
+  });
+  addEventListener('mousedown', () => cur.classList.add('pressing'));
+  addEventListener('mouseup', () => cur.classList.remove('pressing'));
+  (function loop(){
+    x += (tx - x) * 0.22; y += (ty - y) * 0.22;
+    cur.style.left = x + 'px'; cur.style.top = y + 'px';
+    requestAnimationFrame(loop);
+  })();
+})();
+
+/* ===== Nav con scroll ===== */
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
+
+/* ===== Reveal on scroll ===== */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold: 0.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ===== Animación gota gigante: rebote al cargar ===== */
+const bigDrop = document.getElementById('bigDrop');
+bigDrop.style.transformOrigin = '50% 90%';
+bigDrop.animate(
+  [{transform:'scaleY(0) scaleX(.6)'},{transform:'scaleY(1.15) scaleX(.92)',offset:.55},{transform:'scaleY(.96) scaleX(1.03)',offset:.75},{transform:'scaleY(1) scaleX(1)'}],
+  {duration:1400, easing:'cubic-bezier(.22,1,.36,1)', fill:'forwards'}
+);
+
+/* ===== Formulario -> WhatsApp ===== */
+document.getElementById('techForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  const msg =
+`Hola, solicito asesoría técnica Castrol Industrial.
+
+• Nombre: ${v('nombre')}
+• Empresa/Planta: ${v('empresa')}
+• Industria: ${v('industria')}
+• Equipo/Aplicación: ${v('equipo') || 'Por definir con el asesor'}
+• Producto de interés: ${v('producto') || 'Sin preferencia, quiero recomendación'}
+• Necesidad: ${v('mensaje') || 'Sin detalle adicional'}
+
+Enviado desde la web.`;
+  window.open('https://wa.me/584265831648?text=' + encodeURIComponent(msg), '_blank');
+});
+</script>
+</body>
+</html>
